@@ -1,9 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import SheetEditor from './components/SheetEditor';
+import App from './App';
 
-import './styles.css';
-
-const container = document.getElementById('index');
-const root = createRoot(container);
-root.render(<SheetEditor />);
+const root = createRoot(document.getElementById('index'));
+root.render(<App />);

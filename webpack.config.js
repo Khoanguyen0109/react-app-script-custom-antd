@@ -163,6 +163,15 @@ const clientConfig = ({ isDevClientWrapper }) => ({
 const DynamicCdnWebpackPluginConfig = {
   // set "verbose" to true to print console logs on CDN usage while webpack builds
   verbose: false,
+  exclude: [
+    'antd',
+    'react-router-dom',
+    'redux',
+    'redux-thunk',
+    'styled-components',
+    'uuid',
+    'axios',
+  ],
   resolver: (packageName, packageVersion, options) => {
     const packageSuffix = isProd ? '.min.js' : '.js';
     const moduleDetails = moduleToCdn(packageName, packageVersion, options);
