@@ -38,27 +38,23 @@ function ProviderConfig() {
   }, [setPath]);
 
   return (
-    // <ConfigProvider direction={rtl ? 'rtl' : 'ltr'}>
-    //   <ThemeProvider theme={{ ...theme, rtl, topMenu, darkMode }}>
-    //     {/* <Router basename={process.env.PUBLIC_URL}>
-    //       {!isLoggedIn ? (
-    //         <Route path="/" component={Auth} />
-    //       ) : (
-    //         <ProtectedRoute path="/admin" component={Admin} />
-    //       )}
-    //       {isLoggedIn &&
-    //         (path === process.env.PUBLIC_URL ||
-    //           path === `${process.env.PUBLIC_URL}/`) && (
-    //           <Redirect to="/admin" />
-    //         )}
-    //     </Router> */}
-    //     <SignIn />
-    //   </ThemeProvider>
-    // </ConfigProvider>
-
-    <div>
-      sign
-    </div>
+    <ConfigProvider direction={rtl ? 'rtl' : 'ltr'}>
+      <ThemeProvider theme={{ ...theme, rtl, topMenu, darkMode }}>
+        <Router basename={process.env.PUBLIC_URL}>
+          {!isLoggedIn ? (
+            <Route path="/" component={Auth} />
+          ) : (
+            <ProtectedRoute path="/admin" component={Admin} />
+          )}
+          {isLoggedIn &&
+            (path === process.env.PUBLIC_URL ||
+              path === `${process.env.PUBLIC_URL}/`) && (
+              <Redirect to="/admin" />
+            )}
+        </Router>
+        <SignIn />
+      </ThemeProvider>
+    </ConfigProvider>
   );
 }
 

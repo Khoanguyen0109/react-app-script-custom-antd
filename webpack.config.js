@@ -171,6 +171,8 @@ const DynamicCdnWebpackPluginConfig = {
     'styled-components',
     'uuid',
     'axios',
+    'moment',
+    'react-custom-scrollbars'
   ],
   resolver: (packageName, packageVersion, options) => {
     const packageSuffix = isProd ? '.min.js' : '.js';

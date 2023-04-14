@@ -8,9 +8,10 @@ import { AuthWrapper } from './style';
 import { login } from '../../../../redux/authentication/actionCreator';
 import { Checkbox } from '../../../../components/checkbox/checkbox';
 import Heading from '../../../../components/heading/heading';
+import { useHistory } from 'react-router-dom';
 
 function SignIn() {
-  // const history = useHistory();
+  const history = useHistory();
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state.auth.loading);
   const [form] = Form.useForm();
@@ -20,7 +21,7 @@ function SignIn() {
 
   const handleSubmit = () => {
     dispatch(login());
-    // history.push('/admin');
+    history.push('/admin');
   };
 
   const onChange = (checked) => {
